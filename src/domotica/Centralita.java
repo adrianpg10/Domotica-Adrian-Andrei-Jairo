@@ -63,25 +63,14 @@ public class Centralita {
         this.usuario = usuario;
     }
 
-    public int compararUsuario() {
-        Usuario user = Vista.login();
-        boolean zz = false;
-        int contador = 0;
-        while (zz = false || contador <= 5) {
-            if (user.equals(usuario)) {
-                System.out.println("Correcto");
-                zz = true;
-            } else {
-                System.out.println("Error vuelve a poner los datos");
-                contador++;
-                user = Vista.login();
+    public boolean compararUsuario() {
+      Usuario user = Vista.login();
 
-            }
+        if (user.equals(usuario)) {
+            return   true;
+        } else {
+            return false;
         }
-        if (contador >= 5) {
-            System.out.println(" Se han acabado las opciones de login");
-        }
-        return contador;
     }
 
     public Centralita(String user, String contrasena) {
@@ -91,7 +80,64 @@ public class Centralita {
 
 
     public void ejecutarOrden(Comando comando) {
-
+        switch (comando) {
+            case APAGAR_SISTEMA:
+                System.out.println("APAGAR_SISTEMA");
+                break;
+            case CONSULTAR_HORA:
+                System.out.println("CONSULTAR_HORA");
+                break;
+            case MODIFICAR_HORA:
+                System.out.println("MODIFICAR_HORA");
+                break;
+            case SUBIR_PUERTA_GARAJE:
+                System.out.println("SUBIR_PUERTA_GARAJE");            
+                break;
+            case BAJAR_PUERTA_GARAJE:
+                System.out.println("BAJAR_PUERTA_GARAJE");            
+                break;
+            case SUBIR_PERSIANAS_SALON:
+                System.out.println("SUBIR_PERSIANAS_SALON");            
+                break;
+            case BAJAR_PERSIANAS_SALON:
+                System.out.println("BAJAR_PERSIANAS_SALON");            
+                break;
+            case SUBIR_PERSIANAS_DORMITORIO:
+                System.out.println("SUBIR_PERSIANAS_DORMITORIO");            
+                break;
+            case BAJAR_PERSIANAS_DORMITORIO:
+                System.out.println("BAJAR_PERSIANAS_DORMITORIO");            
+                break;
+            case ENCENDER_CAMARA:
+                System.out.println("ENCENDER_CAMARA");            
+                break;
+            case APAGAR_CAMARA:
+                System.out.println("APAGAR_CAMARA");            
+                break;
+            case ENCENDER_LUCES_SALON:
+                System.out.println("ENCENDER_LUCES_SALON");            
+                break;
+            case APAGAR_LUCES_SALON:
+                System.out.println("APAGAR_LUCES_SALON");            
+                break;
+            case ENCENDER_LUCES_DORMITORIO:
+                System.out.println("ENCENDER_LUCES_DORMITORIO");            
+                break;
+            case APAGAR_LUCES_DORMITORIO:
+                System.out.println("APAGAR_LUCES_DORMITORIO");            
+                break;
+            case CONSULTAR_ESTADO_LUCES_DORMITORIO:
+                System.out.println("CONSULTAR_ESTADO_LUCES_DORMITORIO");            
+                break;
+            case CONSULTAR_ESTADO_LUCES_SALON:
+                System.out.println("CONSULTAR_ESTADO_LUCES_SALON");            
+                break;
+            case CONSULTAR_ESTADO_GENERAL_VIVIENDA:
+                System.out.println("CONSULTAR_ESTADO_GENERAL_VIVIENDA");            
+                break;
+            default:
+                throw new AssertionError();
+        }
     }
 
 }
