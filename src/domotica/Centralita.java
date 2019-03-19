@@ -63,15 +63,27 @@ public class Centralita {
         this.usuario = usuario;
     }
 
-    public boolean compararUsuario() {
+    public int compararUsuario() {
         Usuario user = Vista.login();
+        boolean zz = false;
+        int contador = 0;
+        while (zz = false || contador <= 5) {
+            if (user.equals(usuario)) {
+                System.out.println("Correcto");
+                zz = true;
+            } else {
+                System.out.println("Error vuelve a poner los datos");
+                contador++;
+                user = Vista.login();
 
-        if (user.equals(usuario)) {
-            return true;
-        } else {
-            return false;
+            }
         }
+        if (contador >= 5) {
+            System.out.println(" Se han acabado las opciones de login");
+        }
+        return contador;
     }
+
 
     public void ejecutarOrden(Comando comando) {
 

@@ -16,15 +16,13 @@ public class Vista {
     private static Scanner teclado = new Scanner(System.in);
 
     public static Usuario login() {
-        Scanner tc = new Scanner(System.in);
-        System.out.println("Dime user");
-        String user = tc.nextLine();
-        tc.nextLine();
-        System.out.println("Cual es su contraseña");
-        String contra = tc.nextLine();
-        tc.nextLine();
-        Usuario comparar = new Usuario(user, contra);
-        return comparar;
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Dime usuario");
+        String usuario = teclado.nextLine();
+        System.out.println("Dime contraseÃ±a");
+        String contrasenia = teclado.nextLine();
+        return new Usuario(usuario, contrasenia);
+
     }
 
     public static Comando menu() {
