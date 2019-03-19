@@ -84,6 +84,11 @@ public class Centralita {
         return contador;
     }
 
+    public Centralita(String user, String contrasena) {
+        this.usuario = new Usuario(user, contrasena);
+
+    }
+
 
     public void ejecutarOrden(Comando comando) {
 
