@@ -46,63 +46,63 @@ public class Vista {
 
         System.out.println("----------------------------");
         System.out.println("-------¿Que quieres hacer?-------");
-        System.out.println("1.- Apagar sistema");
-        System.out.println("2.- Consultar hora");
-        System.out.println("3.- Modifica la hora de la centralita");
-        System.out.println("4.- Subir puerta del garaje");
-        System.out.println("5.- Bajar puerta del garaje");
-        System.out.println("6.- Subir persianas salon");
-        System.out.println("7.- Bajar persianas salon");
-        System.out.println("8.- Subir persianas dormitorio");
-        System.out.println("9.- Bajar persianas dormitorio");
-        System.out.println("10.- Encender camara");
-        System.out.println("11.- Apagar camara");
-        System.out.println("12.- Encender luces salon");
-        System.out.println("13.- Apagar luces salon");
-        System.out.println("14.- Encender luces dormitorio");
-        System.out.println("15.- Apagar luces dormitorio");
-        System.out.println("16.- Consultar estado luces del dormitorio");
-        System.out.println("17.- Consultar estado luces del salon");
-        System.out.println("18.- Consultar estado general vivienda");
+        System.out.println("0.- Apagar sistema");
+        System.out.println("1.- Consultar hora");
+        System.out.println("2.- Modifica la hora de la centralita");
+        System.out.println("3.- Subir puerta del garaje");
+        System.out.println("4.- Bajar puerta del garaje");
+        System.out.println("5.- Subir persianas salon");
+        System.out.println("6.- Bajar persianas salon");
+        System.out.println("7.- Subir persianas dormitorio");
+        System.out.println("8.- Bajar persianas dormitorio");
+        System.out.println("9.- Encender camara");
+        System.out.println("10.- Apagar camara");
+        System.out.println("11.- Encender luces salon");
+        System.out.println("12.- Apagar luces salon");
+        System.out.println("13.- Encender luces dormitorio");
+        System.out.println("14.- Apagar luces dormitorio");
+        System.out.println("15.- Consultar estado luces del dormitorio");
+        System.out.println("16.- Consultar estado luces del salon");
+        System.out.println("17.- Consultar estado general vivienda");
 
         int opcion = teclado.nextInt();
 
         switch (opcion) {
-            case 1:
+            case 0:
                 return Comando.APAGAR_SISTEMA;
-            case 2:
+            case 1:
                 return Comando.CONSULTAR_HORA;
-            case 3:
+            case 2:
                 return Comando.MODIFICAR_HORA;
-            case 4:
+            case 3:
                 return Comando.SUBIR_PUERTA_GARAJE;
-            case 5:
+            case 4:
                 return Comando.BAJAR_PUERTA_GARAJE;
-            case 6:
+            case 5:
                 return Comando.SUBIR_PERSIANAS_SALON;
-            case 7:
+            case 6:
                 return Comando.BAJAR_PERSIANAS_SALON;
-            case 8:
+            case 7:
                 return Comando.SUBIR_PERSIANAS_DORMITORIO;
-            case 9:
+            case 8:
                 return Comando.BAJAR_PERSIANAS_DORMITORIO;
-            case 10:
+            case 9:
                 return Comando.ENCENDER_CAMARA;
-            case 11:
+            case 10:
                 return Comando.APAGAR_CAMARA;
-            case 12:
+            case 11:
                 return Comando.ENCENDER_LUCES_SALON;
-            case 13:
+            case 12:
                 return Comando.APAGAR_LUCES_SALON;
-            case 14:
+            case 13:
                 return Comando.ENCENDER_LUCES_DORMITORIO;
-            case 15:
+            case 14:
                 return Comando.APAGAR_LUCES_DORMITORIO;
-            case 16:
+            case 15:
                 return Comando.CONSULTAR_ESTADO_LUCES_DORMITORIO;
-            case 17:
+            case 16:
                 return Comando.CONSULTAR_ESTADO_LUCES_SALON;
-            case 18:
+            case 17:
                 return Comando.CONSULTAR_ESTADO_GENERAL_VIVIENDA;
             default:
                 throw new AssertionError();
