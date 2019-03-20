@@ -15,13 +15,29 @@ public class Vista {
 
     private static Scanner teclado = new Scanner(System.in);
 
-    public static Usuario login() {
+    public static boolean login(Centralita c) {
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Dime usuario");
-        String usuario = teclado.nextLine();
-        System.out.println("Dime contraseÃ±a");
-        String contrasenia = teclado.nextLine();
-        return new Usuario(usuario, contrasenia);
+
+        boolean comparar = false;
+        int contador = 0;
+        while (comparar = false || contador <= 5) {
+            System.out.println("Dime usuario");
+            String usuario = teclado.nextLine();
+            System.out.println("Dime contrasenia");
+            String contrasenia = teclado.nextLine();
+            Usuario user = new Usuario(usuario, contrasenia);
+
+            if (c.getUsuario().equals(user)) {
+                System.out.println("Correcto");
+                comparar = true;
+                break;
+            } else {
+                System.out.println("Error en el login ");
+                contador++;
+
+            }
+        }
+        return comparar;
 
     }
 

@@ -63,16 +63,6 @@ public class Centralita {
         this.usuario = usuario;
     }
 
-    public boolean compararUsuario() {
-      Usuario user = Vista.login();
-
-        if (user.equals(usuario)) {
-            return   true;
-        } else {
-            return false;
-        }
-    }
-
     public Centralita(String user, String contrasena) {
         this.usuario = new Usuario(user, contrasena);
 
