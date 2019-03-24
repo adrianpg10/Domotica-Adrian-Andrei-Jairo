@@ -41,6 +41,7 @@ public class Vista {
 
     }
 
+
     public static Comando menu() {
         System.out.println("Bienvenido a la centralita");
 
@@ -64,6 +65,12 @@ public class Vista {
         System.out.println("15.- Consultar estado luces del dormitorio");
         System.out.println("16.- Consultar estado luces del salon");
         System.out.println("17.- Consultar estado general vivienda");
+        System.out.println("18.- Apagado general de las luces");
+        System.out.println("19.- Encendido general de las luces");
+        System.out.println("20.- Apagado eco");
+        System.out.println("21.- Consultar fecha");
+        System.out.println("22.- Encender camara habitación");
+        System.out.println("23.- Apagar camara habitacion");
 
         int opcion = teclado.nextInt();
 
@@ -83,27 +90,39 @@ public class Vista {
             case 6:
                 return Comando.BAJAR_PERSIANAS_SALON;
             case 7:
-                return Comando.SUBIR_PERSIANAS_DORMITORIO;
+                return Comando.SUBIR_PERSIANAS_HABITACION;
             case 8:
-                return Comando.BAJAR_PERSIANAS_DORMITORIO;
+                return Comando.BAJAR_PERSIANAS_HABITACION;
             case 9:
-                return Comando.ENCENDER_CAMARA;
+                return Comando.ENCENDER_CAMARA_SALON;
             case 10:
-                return Comando.APAGAR_CAMARA;
+                return Comando.APAGAR_CAMARA_SALON;
             case 11:
                 return Comando.ENCENDER_LUCES_SALON;
             case 12:
                 return Comando.APAGAR_LUCES_SALON;
             case 13:
-                return Comando.ENCENDER_LUCES_DORMITORIO;
+                return Comando.ENCENDER_LUCES_HABITACION;
             case 14:
-                return Comando.APAGAR_LUCES_DORMITORIO;
+                return Comando.APAGAR_LUCES_HABITACION;
             case 15:
-                return Comando.CONSULTAR_ESTADO_LUCES_DORMITORIO;
+                return Comando.CONSULTAR_ESTADO_LUCES_HABITACION;
             case 16:
                 return Comando.CONSULTAR_ESTADO_LUCES_SALON;
             case 17:
                 return Comando.CONSULTAR_ESTADO_GENERAL_VIVIENDA;
+            case 18:
+                return Comando.APAGADO_GENERAL_LUCES;
+            case 19:
+                return Comando.ENCENDIDO_GENERAL_LUCES; 
+            case 20:
+                return Comando.APAGADO_ECO;
+            case 21:
+                return Comando.CONSULTAR_FECHA;
+            case 22:
+                return Comando.ENCENDER_CAMARA_HABITACION;
+            case 23:
+                return Comando.APAGAR_CAMARA_HABITACION;
             default:
                 throw new AssertionError();
 
