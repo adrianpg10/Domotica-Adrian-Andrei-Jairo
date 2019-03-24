@@ -30,7 +30,7 @@ public class Garaje extends Estancia {
         this.capacidadVehiculos = capacidadVehiculos;
     }
 
-    public Puerta getPuerta() {
+    public Puerta getPuertaGaraje() {
         return puerta;
     }
 

@@ -17,17 +17,20 @@ public class Centralita {
     private LocalDate fech_ini;
     private Reloj reloj;
     private Usuario usuario;
-    private Estancia garaje;
-    private Estancia salon;
-    private Estancia dormitorio;
+    private Garaje garaje;
+    private Salon salon;
+    private Dormitorio dormitorio;
     private Usuario user;
 
     //Contructor parametrizado
-    public Centralita(String identificador, LocalDate fech_ini, Reloj reloj, Usuario usuario) {
+    public Centralita(String identificador, LocalDate fech_ini, Reloj reloj, Usuario usuario,Garaje garaje, Salon salon,Dormitorio dormitorio) {
         this.id = identificador;
         this.fech_ini = fech_ini;
         this.reloj = reloj;
         this.usuario = usuario;
+        this.dormitorio = dormitorio;
+        this.salon = salon;
+        this.garaje = garaje;
     }
 
     //Getters y Setters
@@ -81,13 +84,13 @@ public class Centralita {
                 System.out.println("MODIFICAR_HORA");
                 break;
             case SUBIR_PUERTA_GARAJE:
-                System.out.println("SUBIR_PUERTA_GARAJE");            
+                this.garaje.getPuertaGaraje().abrirPuerta();
                 break;
             case BAJAR_PUERTA_GARAJE:
-                System.out.println("BAJAR_PUERTA_GARAJE");            
-                break;
+                 this.garaje.getPuertaGaraje().cerrarPuerta();                
+                 break;
             case SUBIR_PERSIANAS_SALON:
-                System.out.println("SUBIR_PERSIANAS_SALON");            
+               
                 break;
             case BAJAR_PERSIANAS_SALON:
                 System.out.println("BAJAR_PERSIANAS_SALON");            
