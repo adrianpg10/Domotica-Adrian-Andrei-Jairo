@@ -101,11 +101,11 @@ public class Centralita {
             case BAJAR_PERSIANAS_HABITACION:
                this.dormitorio.getPersianas().bajarPersiana();
                 break;
-            case ENCENDER_CAMARA:
-                System.out.println("ENCENDER_CAMARA");            
+            case ENCENDER_CAMARA_SALON:
+                System.out.println("ENCENDER_CAMARA_SALON");            
                 break;
-            case APAGAR_CAMARA:
-                System.out.println("APAGAR_CAMARA");            
+            case APAGAR_CAMARA_SALON:
+                System.out.println("APAGAR_CAMARA_SALON");            
                 break;
             case ENCENDER_LUCES_SALON:
                 System.out.println("ENCENDER_LUCES_SALON");            
@@ -116,18 +116,31 @@ public class Centralita {
             case ENCENDER_LUCES_HABITACION:
                 System.out.println("ENCENDER_LUCES_DORMITORIO");            
                 break;
-            case APAGAR_LUCES_HABITACION
+            case APAGAR_LUCES_HABITACION:
                 System.out.println("APAGAR_LUCES_DORMITORIO");            
                 break;
             case CONSULTAR_ESTADO_LUCES_HABITACION:
-                System.out.println("CONSULTAR_ESTADO_LUCES_DORMITORIO");            
+                System.out.println("CONSULTAR_ESTADO_LUCES_HABITACION");            
                 break;
-            case CONSULTAR_ESTADO_LUCES_HABITACION:
+            case CONSULTAR_ESTADO_LUCES_SALON:
                 System.out.println("CONSULTAR_ESTADO_LUCES_SALON");            
                 break;
             case CONSULTAR_ESTADO_GENERAL_VIVIENDA:
                 System.out.println("CONSULTAR_ESTADO_GENERAL_VIVIENDA");            
                 break;
+            case APAGADO_GENERAL_LUCES:
+                System.out.println("APAGADO GENERAL DE LAS LUCES");
+            case ENCENDIDO_GENERAL_LUCES:
+                System.out.println("ENCENDIDO GENERAL DE LAS LUCES");
+            case APAGADO_ECO:
+                System.out.println("APAGADO ECO");
+            case CONSULTAR_FECHA:
+                System.out.println("CONSULTAR FECHA");
+            case ENCENDER_CAMARA_HABITACION:
+                System.out.println("ENCENDER CAMARA HABITACION");
+            case APAGAR_CAMARA_HABITACION:
+                System.out.println("APAGAR CAMARA HABITACION");
+                
             default:
                 throw new AssertionError();
         }
