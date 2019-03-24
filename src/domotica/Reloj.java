@@ -17,7 +17,7 @@ public class Reloj {
     private LocalTime hora = LocalTime.now();
 
     public  void mostrarHora(){
-        LocalTime ahora = LocalTime.now();
+        LocalTime ahora = hora;
         System.out.println("Hora actual: " + ahora);
     }
     
@@ -27,12 +27,17 @@ public class Reloj {
         
     }
     public void modificarHora(){
-       /** LocalTime nuevaHora;
+       LocalTime nuevaHora;
         Scanner tec = new Scanner(System.in);
-        System.out.println("Que hora nueva sera");**/
+        System.out.println("Que hora nueva sera");
+        int hora = tec.nextInt();
+        System.out.println("Que minuto nuevo sera");
+        int minuto = tec.nextInt();
+         System.out.println("Que minuto nuevo sera");
+        int segundo = tec.nextInt();
         
-        
-        
+        //nuevaHora = new LocalTime(hora,minuto,segundo,0); falta arreglar esto
+        // this.hora = nuevaHora;
     
     }
 

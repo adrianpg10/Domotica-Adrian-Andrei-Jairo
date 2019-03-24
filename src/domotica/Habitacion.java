@@ -15,6 +15,15 @@ public class Habitacion extends Estancia{
     private Orientacion orientacion;
     private Puerta puerta;
     private Persiana persianas;
+    private Camara camara;
+
+    public Camara getCamara() {
+        return camara;
+    }
+
+    public void setCamara(Camara camara) {
+        this.camara = camara;
+    }
 
     public Luz getLuz() {
         return luz;
@@ -48,12 +57,13 @@ public class Habitacion extends Estancia{
         this.persianas = persianas;
     }
 
-    public Habitacion(Luz luz, Orientacion orientacion, Puerta puerta, Persiana persianas, int m2) {
+    public Habitacion(Luz luz, Orientacion orientacion, Puerta puerta, Persiana persianas, int m2, Camara camara) {
         super(m2);
         this.luz = luz;
         this.orientacion = orientacion;
         this.puerta = puerta;
         this.persianas = persianas;
+        this.camara = camara;
     }
     
     

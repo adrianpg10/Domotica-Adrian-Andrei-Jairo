@@ -14,16 +14,26 @@ package domotica;
 public class Garaje extends Estancia {
     private int capacidadVehiculos;
     private Puerta puerta;
+    private Luz luz;
     // Los constructores son los unicos metodos que no se heredan
 
-    public Garaje(int capacidadVehiculos, Puerta puerta, int m2) {
+    public Garaje(int capacidadVehiculos, Puerta puerta, int m2, Luz luz) {
         super(m2);
         this.capacidadVehiculos = capacidadVehiculos;
         this.puerta = puerta;
+        this.luz = luz;
     }
 
     public int getCapacidadVehiculos() {
         return capacidadVehiculos;
+    }
+
+    public Luz getLuz() {
+        return luz;
+    }
+
+    public void setLuz(Luz luz) {
+        this.luz = luz;
     }
 
     public void setCapacidadVehiculos(int capacidadVehiculos) {

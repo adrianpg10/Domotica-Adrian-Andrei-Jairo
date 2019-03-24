@@ -81,7 +81,7 @@ public class Centralita {
                 this.reloj.mostrarHora();
                 break;
             case MODIFICAR_HORA:
-                System.out.println("MODIFICAR_HORA");
+               this.reloj.modificarHora();
                 break;
             case SUBIR_PUERTA_GARAJE:
                 this.garaje.getPuertaGaraje().abrirPuerta();
@@ -102,45 +102,61 @@ public class Centralita {
                this.dormitorio.getPersianas().bajarPersiana();
                 break;
             case ENCENDER_CAMARA_SALON:
-                System.out.println("ENCENDER_CAMARA_SALON");            
+                 // falta la restriccion de la hora 
+                this.salon.getCamara().encenderCamara();
                 break;
             case APAGAR_CAMARA_SALON:
-                System.out.println("APAGAR_CAMARA_SALON");            
+               
+              this.salon.getCamara().apagarCamara();
                 break;
             case ENCENDER_LUCES_SALON:
-                System.out.println("ENCENDER_LUCES_SALON");            
-                break;
+                this.salon.getLuz().encenderLuz();
+                        
+                   break;
             case APAGAR_LUCES_SALON:
-                System.out.println("APAGAR_LUCES_SALON");            
+                this.salon.getLuz().apagarLuz();
                 break;
             case ENCENDER_LUCES_HABITACION:
-                System.out.println("ENCENDER_LUCES_DORMITORIO");            
+                this.dormitorio.getLuz().encenderLuz();
                 break;
             case APAGAR_LUCES_HABITACION:
-                System.out.println("APAGAR_LUCES_DORMITORIO");            
+               this.dormitorio.getLuz().apagarLuz();
                 break;
             case CONSULTAR_ESTADO_LUCES_HABITACION:
-                System.out.println("CONSULTAR_ESTADO_LUCES_HABITACION");            
+               boolean estado =  this.dormitorio.getLuz().isEstado();
+               if(estado == true){System.out.println("Las luces estan encendidas");}
+               else{System.out.println("Las luces estan apagadas");}
                 break;
             case CONSULTAR_ESTADO_LUCES_SALON:
-                System.out.println("CONSULTAR_ESTADO_LUCES_SALON");            
+                   boolean estado2 =  this.salon.getLuz().isEstado();
+               if(estado2 == true){System.out.println("Las luces estan encendidas");}
+               else{System.out.println("Las luces estan apagadas");}           
                 break;
             case CONSULTAR_ESTADO_GENERAL_VIVIENDA:
                 System.out.println("CONSULTAR_ESTADO_GENERAL_VIVIENDA");            
                 break;
             case APAGADO_GENERAL_LUCES:
-                System.out.println("APAGADO GENERAL DE LAS LUCES");
+                this.salon.getLuz().apagarLuz();
+                this.garaje.getLuz().encenderLuz();
+                this.dormitorio.getLuz().apagarLuz();
+                break;
             case ENCENDIDO_GENERAL_LUCES:
-                System.out.println("ENCENDIDO GENERAL DE LAS LUCES");
+                this.salon.getLuz().encenderLuz();
+                this.garaje.getLuz().encenderLuz();
+                this.dormitorio.getLuz().encenderLuz();
+                break;
             case APAGADO_ECO:
                 System.out.println("APAGADO ECO");
             case CONSULTAR_FECHA:
-                System.out.println("CONSULTAR FECHA");
+                this.reloj.mostrarFecha();
+                        break;
             case ENCENDER_CAMARA_HABITACION:
-                System.out.println("ENCENDER CAMARA HABITACION");
+                // falta restriccion de la hora
+                this.dormitorio.getCamara().encenderCamara();
+                break;
             case APAGAR_CAMARA_HABITACION:
-                System.out.println("APAGAR CAMARA HABITACION");
-                
+               this.dormitorio.getCamara().apagarCamara();
+                break;
             default:
                 throw new AssertionError();
         }
