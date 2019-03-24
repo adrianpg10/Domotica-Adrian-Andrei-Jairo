@@ -47,6 +47,14 @@ public class Habitacion extends Estancia{
     public void setPersianas(Persiana persianas) {
         this.persianas = persianas;
     }
+
+    public Habitacion(Luz luz, Orientacion orientacion, Puerta puerta, Persiana persianas, int m2) {
+        super(m2);
+        this.luz = luz;
+        this.orientacion = orientacion;
+        this.puerta = puerta;
+        this.persianas = persianas;
+    }
     
     
     

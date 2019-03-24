@@ -19,11 +19,11 @@ public class Centralita {
     private Usuario usuario;
     private Garaje garaje;
     private Salon salon;
-    private Dormitorio dormitorio;
+    private Habitacion dormitorio;
     private Usuario user;
 
     //Contructor parametrizado
-    public Centralita(String identificador, LocalDate fech_ini, Reloj reloj, Usuario usuario,Garaje garaje, Salon salon,Dormitorio dormitorio) {
+    public Centralita(String identificador, LocalDate fech_ini, Reloj reloj, Usuario usuario,Garaje garaje, Salon salon,Habitacion dormitorio) {
         this.id = identificador;
         this.fech_ini = fech_ini;
         this.reloj = reloj;
@@ -78,7 +78,7 @@ public class Centralita {
                 System.out.println("APAGAR_SISTEMA");
                 break;
             case CONSULTAR_HORA:
-                System.out.println("CONSULTAR_HORA");
+                this.reloj.mostrarHora();
                 break;
             case MODIFICAR_HORA:
                 System.out.println("MODIFICAR_HORA");
@@ -90,16 +90,16 @@ public class Centralita {
                  this.garaje.getPuertaGaraje().cerrarPuerta();                
                  break;
             case SUBIR_PERSIANAS_SALON:
-               
+               this.salon.getPersianas().subirPeriana();
                 break;
             case BAJAR_PERSIANAS_SALON:
-                System.out.println("BAJAR_PERSIANAS_SALON");            
+                this.salon.getPersianas().bajarPersiana();
                 break;
-            case SUBIR_PERSIANAS_DORMITORIO:
-                System.out.println("SUBIR_PERSIANAS_DORMITORIO");            
+            case SUBIR_PERSIANAS_HABITACION:
+                this.dormitorio.getPersianas().subirPeriana();
                 break;
-            case BAJAR_PERSIANAS_DORMITORIO:
-                System.out.println("BAJAR_PERSIANAS_DORMITORIO");            
+            case BAJAR_PERSIANAS_HABITACION:
+               this.dormitorio.getPersianas().bajarPersiana();
                 break;
             case ENCENDER_CAMARA:
                 System.out.println("ENCENDER_CAMARA");            
@@ -113,16 +113,16 @@ public class Centralita {
             case APAGAR_LUCES_SALON:
                 System.out.println("APAGAR_LUCES_SALON");            
                 break;
-            case ENCENDER_LUCES_DORMITORIO:
+            case ENCENDER_LUCES_HABITACION:
                 System.out.println("ENCENDER_LUCES_DORMITORIO");            
                 break;
-            case APAGAR_LUCES_DORMITORIO:
+            case APAGAR_LUCES_HABITACION
                 System.out.println("APAGAR_LUCES_DORMITORIO");            
                 break;
-            case CONSULTAR_ESTADO_LUCES_DORMITORIO:
+            case CONSULTAR_ESTADO_LUCES_HABITACION:
                 System.out.println("CONSULTAR_ESTADO_LUCES_DORMITORIO");            
                 break;
-            case CONSULTAR_ESTADO_LUCES_SALON:
+            case CONSULTAR_ESTADO_LUCES_HABITACION:
                 System.out.println("CONSULTAR_ESTADO_LUCES_SALON");            
                 break;
             case CONSULTAR_ESTADO_GENERAL_VIVIENDA:
