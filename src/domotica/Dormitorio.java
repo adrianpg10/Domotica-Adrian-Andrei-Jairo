@@ -10,6 +10,7 @@ package domotica;
  * @author jairo
  */
 public class Dormitorio {
-    private Orientacion orientacion;
+
+    
     
 }

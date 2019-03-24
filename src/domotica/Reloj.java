@@ -14,12 +14,12 @@ import java.time.LocalTime;
  */
 public class Reloj {
 
-    public static void mostrarHora(){
+    public  void mostrarHora(){
         LocalTime ahora = LocalTime.now();
         System.out.println("Hora actual: " + ahora);
     }
     
-    public static void mostrarFecha(){
+    public  void mostrarFecha(){
         LocalDate hoy = LocalDate.now();
         System.out.println("Hoy es " + hoy);
     }

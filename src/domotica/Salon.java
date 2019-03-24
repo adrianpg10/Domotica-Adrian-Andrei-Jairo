@@ -9,7 +9,7 @@ package domotica;
  *
  * @author jairo
  */
-public class Salon extends Habitacion{
+public class Salon extends Estancia{
     private boolean terraza;
     
 }
