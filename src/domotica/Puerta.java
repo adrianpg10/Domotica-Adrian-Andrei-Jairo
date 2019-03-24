@@ -14,12 +14,26 @@ public class Puerta {
     private int retardo;
     
     // si no pongo constructor crea uno java por defect
-
+       
     @Override
     public String toString() {
         return "Puerta{" + "estado=" + estado + ", retardo=" + retardo + '}';
     }
     
+    public void abrirPuerta(){
+        if (estado == false) {
+            this.estado = true;
+        } else {
+            System.out.println("Ya esta abierta");
+        }
+    }
     
+    public void cerrarPuerta(){
+        if (estado == true) {
+            this.estado = false;
+        } else {
+            System.out.println("Ya esta cerrada");
+        }
+    }
     
 }
