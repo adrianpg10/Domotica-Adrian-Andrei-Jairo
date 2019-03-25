@@ -7,6 +7,7 @@ package domotica;
 
 import static domotica.Comando.APAGAR_SISTEMA;
 import static domotica.Comando.CONSULTAR_ESTADO_GENERAL_VIVIENDA;
+import java.time.LocalDate;
 
 /**
  *
@@ -15,7 +16,19 @@ import static domotica.Comando.CONSULTAR_ESTADO_GENERAL_VIVIENDA;
 public class Main {
 
     public static void main(String[] args) {
-        Centralita c = new Centralita("pepe", "rodiguez");
+        //   public Centralita(String identificador, LocalDate fech_ini, Reloj reloj, 
+        //Garaje garaje, Salon salon,Habitacion dormitorio,Usuario user)
+        String id = "1234";
+        LocalDate lc =  LocalDate.now();
+        Reloj reloj = new Reloj();
+        Garaje garaje = new Garaje();
+        Salon salon = new Salon();
+        Habitacion dorm = new Habitacion();
+        String us = "jc";
+        String contra = "vico";
+        Usuario user = new Usuario(us,contra);
+        
+        Centralita c = new Centralita(id,lc,reloj,garaje,salon,dorm,user);
         boolean login = Vista.login(c);
         if (login == false) {
             System.out.println("Has pasado todos los intentos de login se apagara el sistema");

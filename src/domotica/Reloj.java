@@ -26,15 +26,16 @@ public class Reloj {
         System.out.println("Hoy es " + hoy);
         
     }
+
+    public LocalTime getHora() {
+        return hora;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
     public void modificarHora(){
-       LocalTime nuevaHora;
-        Scanner tec = new Scanner(System.in);
-        System.out.println("Que hora nueva sera");
-        int hora = tec.nextInt();
-        System.out.println("Que minuto nuevo sera");
-        int minuto = tec.nextInt();
-         System.out.println("Que minuto nuevo sera");
-        int segundo = tec.nextInt();
+     
         
         //nuevaHora = new LocalTime(hora,minuto,segundo,0); falta arreglar esto
         // this.hora = nuevaHora;
@@ -42,6 +43,7 @@ public class Reloj {
     }
 
     public Reloj() {
+        this.hora = LocalTime.now();
     }
     
 }

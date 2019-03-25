@@ -15,9 +15,30 @@ public class Puerta {
     
     // si no pongo constructor crea uno java por defect
        
+    public Puerta() {
+        this.estado = false;
+        this.retardo = 2;
+    }
+
     @Override
     public String toString() {
         return "Puerta{" + "estado=" + estado + ", retardo=" + retardo + '}';
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public int getRetardo() {
+        return retardo;
+    }
+
+    public void setRetardo(int retardo) {
+        this.retardo = retardo;
     }
     
     public void abrirPuerta(){

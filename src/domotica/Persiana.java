@@ -21,6 +21,9 @@ public class Persiana {
     }
     
     public Persiana(){
+        this.estado = true;
+        this.largo = 10;
+        this.ancho = 10;
         
     }
 

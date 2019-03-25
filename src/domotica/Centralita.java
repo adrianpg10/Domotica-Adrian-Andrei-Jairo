@@ -20,17 +20,18 @@ public class Centralita {
     private Garaje garaje;
     private Salon salon;
     private Habitacion dormitorio;
-    private Usuario user;
+  
 
     //Contructor parametrizado
-    public Centralita(String identificador, LocalDate fech_ini, Reloj reloj, Usuario usuario,Garaje garaje, Salon salon,Habitacion dormitorio) {
+    public Centralita(String identificador, LocalDate fech_ini, Reloj reloj, Garaje garaje, Salon salon,Habitacion dormitorio,Usuario usuario) {
         this.id = identificador;
         this.fech_ini = fech_ini;
         this.reloj = reloj;
-        this.usuario = usuario;
+      
         this.dormitorio = dormitorio;
         this.salon = salon;
         this.garaje = garaje;
+        this.usuario = usuario;
     }
 
     //Getters y Setters
@@ -102,8 +103,13 @@ public class Centralita {
                this.dormitorio.getPersianas().bajarPersiana();
                 break;
             case ENCENDER_CAMARA_SALON:
-                 // falta la restriccion de la hora 
+               if(  this.reloj.getHora().getHour() >= 20 || this.reloj.getHora().getHour() <= 8  ){
+               this.salon.getLuz().encenderLuz();
+                   System.out.println("Luz encendida");
+               
+               }
                 this.salon.getCamara().encenderCamara();
+                System.out.println("Camara encendida");
                 break;
             case APAGAR_CAMARA_SALON:
                
@@ -133,26 +139,55 @@ public class Centralita {
                else{System.out.println("Las luces estan apagadas");}           
                 break;
             case CONSULTAR_ESTADO_GENERAL_VIVIENDA:
-                System.out.println("CONSULTAR_ESTADO_GENERAL_VIVIENDA");            
+                this.reloj.mostrarHora();
+                this.reloj.mostrarFecha();
+                if(this.salon.getCamara().isEstado() == true){
+                    System.out.println("Camara encendida del salon");
+                }else{System.out.println("Camara apagada del salon");}
+                 if(this.dormitorio.getCamara().isEstado() == true){
+                    System.out.println("Camara encendida del dormitorio");
+                }else{System.out.println("Camara apagada del dormitorio");}
+                 if(this.salon.getLuz().isEstado() == true){
+                     System.out.println("Luz encendida del salon");
+                 }else{System.out.println("Luz apagada del salon");}
+                  if(this.dormitorio.getLuz().isEstado() == true){
+                     System.out.println("Luz encendida del dormitorio");
+                 }else{System.out.println("Luz apagada del dormitorio");}
+                  if(this.garaje.getPuertaGaraje().isEstado() == true){
+                      System.out.println("Puerta del garaje abierta");
+                  
+                  }else{System.out.println("Puerta del garaje cerrada");}
+                  
                 break;
             case APAGADO_GENERAL_LUCES:
                 this.salon.getLuz().apagarLuz();
-                this.garaje.getLuz().encenderLuz();
+             
                 this.dormitorio.getLuz().apagarLuz();
                 break;
             case ENCENDIDO_GENERAL_LUCES:
                 this.salon.getLuz().encenderLuz();
-                this.garaje.getLuz().encenderLuz();
+                
                 this.dormitorio.getLuz().encenderLuz();
                 break;
             case APAGADO_ECO:
-                System.out.println("APAGADO ECO");
+                  if(  this.reloj.getHora().getHour() <= 18 || this.reloj.getHora().getHour() >= 8  ){
+               this.dormitorio.getLuz().apagarLuz();
+               this.salon.getLuz().apagarLuz();
+                   System.out.println("Luz apagada");
+               
+               }
+                  break;
             case CONSULTAR_FECHA:
                 this.reloj.mostrarFecha();
                         break;
             case ENCENDER_CAMARA_HABITACION:
-                // falta restriccion de la hora
+                if(  this.reloj.getHora().getHour() >= 20 || this.reloj.getHora().getHour() <= 8  ){
+               this.dormitorio.getLuz().encenderLuz();
+                   System.out.println("Luz encendida");
+               
+               }
                 this.dormitorio.getCamara().encenderCamara();
+                System.out.println("Camara encendida");
                 break;
             case APAGAR_CAMARA_HABITACION:
                this.dormitorio.getCamara().apagarCamara();

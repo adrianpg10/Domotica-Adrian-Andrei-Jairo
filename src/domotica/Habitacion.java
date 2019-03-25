@@ -65,6 +65,16 @@ public class Habitacion extends Estancia{
         this.persianas = persianas;
         this.camara = camara;
     }
+
+    public Habitacion() {
+        super();
+        this.luz = new Luz();
+        this.puerta = new Puerta();
+        this.persianas = new Persiana();
+        this.camara = new Camara();
+        
+    }
+    
     
     
     

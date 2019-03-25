@@ -19,6 +19,8 @@ public class Luz {
     }
     
     public Luz(){
+        this.estado = true;
+        this.consumo = 10.0;
         
     }
 

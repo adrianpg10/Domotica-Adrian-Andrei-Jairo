@@ -65,6 +65,16 @@ public class Salon extends Estancia{
         this.persianas = persianas;
         this.camara = camara;
     }
+
+    public Salon() {
+        super();
+        this.terraza = true;
+        this.luz = new Luz();
+        this.puerta = new Puerta();
+        this.persianas = new Persiana();
+        this.camara = new Camara();
+    }
+    
     
     
 }
